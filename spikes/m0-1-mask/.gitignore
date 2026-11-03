@@ -1,0 +1,5 @@
+.venv/
+*.tflite
+portraits/
+out/
+setup.log

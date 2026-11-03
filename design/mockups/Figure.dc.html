@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portrait figure</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 100%; height: 100%; min-height: 120px; position: relative; overflow: hidden; background: #0B0D14">
+  <svg width="100%" height="100%" viewBox="0 0 300 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="{{label}}" style="display: block; position: absolute; inset: 0">
+    <defs>
+      <linearGradient id="fg-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1D2436"></stop>
+        <stop offset="1" stop-color="#090B12"></stop>
+      </linearGradient>
+      <pattern id="fg-tweed" width="12" height="12" patternUnits="userSpaceOnUse">
+        <rect width="12" height="12" fill="#EADFE3"></rect>
+        <rect x="0" y="0" width="6" height="3" fill="#7A2240"></rect>
+        <rect x="6" y="6" width="6" height="3" fill="#7A2240"></rect>
+        <rect x="3" y="3" width="2" height="6" fill="#C98AA0"></rect>
+        <rect x="9" y="0" width="2" height="5" fill="#3A2A2E"></rect>
+        <rect x="0" y="9" width="3" height="2" fill="#3A2A2E"></rect>
+      </pattern>
+      <pattern id="fg-polka" width="22" height="22" patternUnits="userSpaceOnUse">
+        <rect width="22" height="22" fill="#3B2626"></rect>
+        <circle cx="5" cy="5" r="3.2" fill="#FF2D78"></circle>
+        <circle cx="16" cy="16" r="3.2" fill="#FF2D78"></circle>
+      </pattern>
+      <pattern id="fg-stripe" width="18" height="18" patternUnits="userSpaceOnUse">
+        <rect width="18" height="18" fill="#F0D9CF"></rect>
+        <rect width="9" height="18" fill="#4A2B20"></rect>
+      </pattern>
+      <pattern id="fg-teal" width="6" height="6" patternUnits="userSpaceOnUse">
+        <rect width="6" height="6" fill="#14A3B6"></rect>
+        <path d="M0 3H6" stroke="#0F8B9C" stroke-width="1"></path>
+      </pattern>
+      <pattern id="fg-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="8" height="8" fill="#D7F94A" fill-opacity="0.45"></rect>
+        <path d="M0 0V8" stroke="#D7F94A" stroke-width="2"></path>
+      </pattern>
+      <linearGradient id="fg-folds" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#000" stop-opacity="0.6"></stop>
+        <stop offset="0.28" stop-color="#000" stop-opacity="0"></stop>
+        <stop offset="0.5" stop-color="#000" stop-opacity="0.18"></stop>
+        <stop offset="0.72" stop-color="#000" stop-opacity="0"></stop>
+        <stop offset="1" stop-color="#000" stop-opacity="0.55"></stop>
+      </linearGradient>
+    </defs>
+    <rect width="300" height="380" fill="url(#fg-sky)"></rect>
+    <g fill="#F5C36B" fill-opacity="0.75">
+      <rect x="6" y="196" width="2" height="2"></rect><rect x="22" y="194" width="3" height="2"></rect><rect x="40" y="197" width="2" height="2"></rect><rect x="58" y="193" width="2" height="3"></rect><rect x="236" y="195" width="3" height="2"></rect><rect x="252" y="198" width="2" height="2"></rect><rect x="270" y="194" width="2" height="2"></rect><rect x="288" y="196" width="3" height="2"></rect>
+    </g>
+    <rect x="0" y="201" width="300" height="179" fill="#141826"></rect>
+    <path d="M108 122 Q104 60 150 58 Q198 60 192 122 L200 236 Q182 214 176 192 L170 150 Q150 172 130 150 L124 192 Q118 214 100 236 Z" fill="#17110F"></path>
+    <path d="M44 300 L82 314 L80 380 L36 380 Z" fill="{{skin}}"></path>
+    <path d="M256 300 L218 314 L220 380 L264 380 Z" fill="{{skin}}"></path>
+    <rect x="137" y="148" width="26" height="52" fill="{{skin}}"></rect>
+    <ellipse cx="150" cy="116" rx="33" ry="43" fill="{{skin}}"></ellipse>
+    <path d="M118 104 Q122 66 150 66 Q180 66 184 104 Q170 84 150 84 Q130 84 118 104 Z" fill="#17110F"></path>
+    <path d="M64 236 Q84 200 124 190 Q150 214 176 190 Q216 200 236 236 L256 300 L218 314 L214 380 L86 380 L82 314 L44 300 Z" fill="{{garmentFill}}"></path>
+    <path d="M64 236 Q84 200 124 190 Q150 214 176 190 Q216 200 236 236 L256 300 L218 314 L214 380 L86 380 L82 314 L44 300 Z" fill="url(#fg-folds)" opacity="{{shade}}"></path>
+    <g fill="none" stroke="#000" stroke-linecap="round" opacity="{{creases}}">
+      <path d="M118 236 Q128 290 116 372" stroke-width="5"></path>
+      <path d="M186 240 Q176 300 190 372" stroke-width="5"></path>
+      <path d="M150 300 Q156 336 148 376" stroke-width="3"></path>
+    </g>
+    <sc-if value="{{mask}}" hint-placeholder-val="{{ false }}">
+      <path d="M64 236 Q84 200 124 190 Q150 214 176 190 Q216 200 236 236 L256 300 L218 314 L214 380 L86 380 L82 314 L44 300 Z" fill="url(#fg-hatch)" stroke="#D7F94A" stroke-width="2.5" stroke-dasharray="7 5"></path>
+    </sc-if>
+  </svg>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"fabric":{"editor":"enum","options":["original","tweed","polka","stripe","teal"],"default":"original"},"mask":{"editor":"boolean","default":false},"shade":{"editor":"range","min":0,"max":1,"step":0.05,"default":0.7},"skin":{"editor":"color","default":"#B97A5A","options":["#E2B396","#B97A5A","#8E5B43","#5E3B2C"]},"$preview":{"width":300,"height":380}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const fabric = this.props.fabric ?? 'original';
+    const fills = {
+      original: '#E7E2D9',
+      tweed: 'url(#fg-tweed)',
+      polka: 'url(#fg-polka)',
+      stripe: 'url(#fg-stripe)',
+      teal: 'url(#fg-teal)'
+    };
+    const shadeRaw = this.props.shade ?? 0.7;
+    const shade = Number(shadeRaw);
+    return {
+      garmentFill: fills[fabric] || fills.original,
+      shade: fabric === 'original' ? 0.35 : shade,
+      creases: (fabric === 'original' ? 0.35 : shade) * 0.22,
+      mask: !!this.props.mask,
+      skin: this.props.skin ?? '#B97A5A',
+      label: 'Portrait of a person wearing a ' + (fabric === 'original' ? 'plain top' : fabric + ' fabric top')
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Live try-on</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#D7F94A;text-decoration:none}a:hover{color:#E6FF85}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #0F0F0E; color: #F4F2EE; font-family: Inter, system-ui, sans-serif">
+  <svg width="390" height="844" viewBox="0 0 390 844" aria-hidden="true" style="position: absolute; inset: 0; display: block">
+    <defs>
+      <pattern id="cam-tweed" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(2.6)">
+        <rect width="12" height="12" fill="#EADFE3"></rect>
+        <rect x="0" y="0" width="6" height="3" fill="#7A2240"></rect>
+        <rect x="6" y="6" width="6" height="3" fill="#7A2240"></rect>
+        <rect x="3" y="3" width="2" height="6" fill="#C98AA0"></rect>
+        <rect x="9" y="0" width="2" height="5" fill="#3A2A2E"></rect>
+        <rect x="0" y="9" width="3" height="2" fill="#3A2A2E"></rect>
+      </pattern>
+      <pattern id="cam-polka" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="scale(2.6)">
+        <rect width="22" height="22" fill="#3B2626"></rect>
+        <circle cx="5" cy="5" r="3.2" fill="#FF2D78"></circle>
+        <circle cx="16" cy="16" r="3.2" fill="#FF2D78"></circle>
+      </pattern>
+      <pattern id="cam-stripe" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="scale(2.6)">
+        <rect width="18" height="18" fill="#F0D9CF"></rect>
+        <rect width="9" height="18" fill="#4A2B20"></rect>
+      </pattern>
+      <pattern id="cam-teal" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="scale(2.6)">
+        <rect width="6" height="6" fill="#14A3B6"></rect>
+        <path d="M0 3H6" stroke="#0F8B9C" stroke-width="1"></path>
+      </pattern>
+      <radialGradient id="cam-vignette" cx="0.5" cy="0.45" r="0.75">
+        <stop offset="0.55" stop-color="#000" stop-opacity="0"></stop>
+        <stop offset="1" stop-color="#000" stop-opacity="0.55"></stop>
+      </radialGradient>
+    </defs>
+    <rect width="390" height="844" fill="{{camFill}}"></rect>
+    <rect width="390" height="844" fill="url(#cam-vignette)"></rect>
+  </svg>
+
+  <div style="position: absolute; left: 0; right: 0; top: 0; padding: 56px 16px 0; display: flex; align-items: center; justify-content: space-between">
+    <a href="Main.dc.html" aria-label="Close" style="width: 48px; height: 48px; border-radius: 22px; background: rgba(15,15,14,0.72); color: #F4F2EE; display: flex; align-items: center; justify-content: center">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </a>
+    <div style="height: 32px; padding: 0 12px; border-radius: 16px; background: rgba(15,15,14,0.72); display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">
+      <span style="width: 8px; height: 8px; border-radius: 4px; background: #FF5A4E"></span>
+      Live · Me
+    </div>
+    <button aria-label="Torch" aria-pressed="false" style="width: 48px; height: 48px; border-radius: 24px; border: 0; background: rgba(15,15,14,0.72); color: #F4F2EE; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M9 2h6v4l2 3v3H7V9l2-3V2z"></path><path d="M12 12v5"></path><path d="M9 22h6"></path></svg>
+    </button>
+  </div>
+
+  <button onClick="{{ nextFabric }}" aria-label="Portrait over live fabric" style="position: absolute; left: 60px; top: 150px; width: 270px; height: 350px; padding: 0; border: 4px solid #F4F2EE; border-radius: 6px; overflow: hidden; background: #1C1B19; transform: rotate(-3deg); box-shadow: 0 18px 40px rgba(0,0,0,0.55); cursor: pointer">
+    <dc-import name="Figure" fabric="{{ fabric }}" shade="{{ shade }}" hint-size="100%,100%"></dc-import>
+  </button>
+
+  <div style="position: absolute; left: 0; right: 0; top: 520px; display: flex; justify-content: center">
+    <div style="padding: 6px 12px; border-radius: 14px; background: rgba(15,15,14,0.72); font-size: 12px; font-weight: 500; display: flex; gap: 8px; align-items: center">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg>
+      Pinch to resize · drag to move
+    </div>
+
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; top: 572px; display: flex; justify-content: center; gap: 8px">
+    <a href="Cutout.dc.html" style="height: 44px; padding: 0 14px; border-radius: 22px; background: rgba(15,15,14,0.72); color: #F4F2EE; display: flex; align-items: center; font-size: 13px; font-weight: 600">Edit cutout</a>
+    <button aria-label="Fit portrait to screen" style="height: 44px; padding: 0 14px; border-radius: 22px; border: 0; background: rgba(15,15,14,0.72); color: #F4F2EE; font: 600 13px Inter, sans-serif; cursor: pointer">Fit</button>
+  </div>
+
+  <div style="position: absolute; left: 12px; right: 12px; bottom: 28px; padding: 18px 18px 20px; border-radius: 28px; background: rgba(15,15,14,0.86); display: flex; flex-direction: column; gap: 18px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <label for="shade" style="font-size: 14px; color: #A19D95; width: 64px">Shading</label>
+      <input id="shade" type="range" min="0" max="100" value="{{ shadePct }}" onInput="{{ setShade }}" style="flex: 1; accent-color: #D7F94A">
+      <span style="font-size: 14px; font-weight: 600; width: 44px; text-align: right">{{ shadeLabel }}</span>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between">
+      <a href="Looks.dc.html" aria-label="Last look" style="width: 52px; height: 52px; border-radius: 14px; overflow: hidden; border: 2px solid #2C2B28; display: block">
+        <dc-import name="Figure" fabric="tweed" hint-size="100%,100%"></dc-import>
+      </a>
+      <a href="Review.dc.html" aria-label="Capture look" style="width: 78px; height: 78px; border-radius: 39px; border: 4px solid #F4F2EE; display: flex; align-items: center; justify-content: center; box-sizing: border-box">
+        <span style="width: 60px; height: 60px; border-radius: 30px; background: #D7F94A; display: block"></span>
+      </a>
+      <button aria-label="Freeze fabric" aria-pressed="false" style="width: 52px; height: 52px; border-radius: 26px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 5v14M15 5v14"></path></svg>
+      </button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startFabric":{"editor":"enum","options":["tweed","polka","stripe","teal"],"default":"polka"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { idx: null, shade: 70 };
+  }
+  renderVals() {
+    const order = ['tweed', 'polka', 'stripe', 'teal'];
+    const start = Math.max(0, order.indexOf(this.props.startFabric ?? 'polka'));
+    const idx = this.state.idx == null ? start : this.state.idx;
+    const fabric = order[idx];
+    const shade = this.state.shade;
+    return {
+      fabric: fabric,
+      camFill: 'url(#cam-' + fabric + ')',
+      shade: shade / 100,
+      shadePct: shade,
+      shadeLabel: shade + '%',
+      nextFabric: () => this.setState({ idx: (idx + 1) % order.length }),
+      setShade: (e) => this.setState({ shade: Number(e.target.value) })
+    };
+  }
+}
+</script>
+</body>
+</html>

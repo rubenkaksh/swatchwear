@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portraits</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#D7F94A;text-decoration:none}a:hover{color:#E6FF85}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0F0F0E; color: #F4F2EE; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+  <header style="padding: 56px 24px 16px; display: flex; flex-direction: column; gap: 6px">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.02em">Swatch</h1>
+      <button aria-label="Settings" style="width: 48px; height: 48px; border-radius: 22px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"></path></svg>
+      </button>
+    </div>
+    <p style="margin: 0; font-size: 15px; color: #A19D95; line-height: 1.4">Pick a portrait, then point your camera at any fabric.</p>
+  </header>
+
+  <div style="padding: 8px 24px 12px; display: flex; justify-content: space-between; align-items: baseline">
+    <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #A19D95">Portraits · 3</h2>
+    <span style="font-size: 13px; color: #A19D95">Recent first</span>
+  </div>
+
+  <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 0 24px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start">
+    <a href="Cutout.dc.html" style="height: 210px; border-radius: 18px; border: 1.5px dashed #4A4843; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #D7F94A">
+      <span style="width: 48px; height: 48px; border-radius: 24px; background: #D7F94A; color: #0F0F0E; display: flex; align-items: center; justify-content: center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+      </span>
+      <span style="font-size: 15px; font-weight: 600">Add portrait</span>
+      <span style="font-size: 12px; color: #A19D95; text-align: center; padding: 0 16px">Upper body, plain top, facing camera</span>
+    </a>
+    <a href="TryOn.dc.html" style="display: flex; flex-direction: column; gap: 8px; color: #F4F2EE">
+      <div style="height: 210px; border-radius: 18px; overflow: hidden; background: #1C1B19">
+        <dc-import name="Figure" fabric="original" hint-size="100%,210px"></dc-import>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px">
+        <span style="font-size: 15px; font-weight: 600">Me</span>
+        <span style="font-size: 13px; color: #A19D95">6 looks</span>
+      </div>
+    </a>
+    <a href="TryOn.dc.html" style="display: flex; flex-direction: column; gap: 8px; color: #F4F2EE">
+      <div style="height: 210px; border-radius: 18px; overflow: hidden; background: #1C1B19">
+        <dc-import name="Figure" fabric="original" skin="#8E5B43" hint-size="100%,210px"></dc-import>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px">
+        <span style="font-size: 15px; font-weight: 600">Sister</span>
+        <span style="font-size: 13px; color: #A19D95">2 looks</span>
+      </div>
+    </a>
+    <a href="TryOn.dc.html" style="display: flex; flex-direction: column; gap: 8px; color: #F4F2EE">
+      <div style="height: 210px; border-radius: 18px; overflow: hidden; background: #1C1B19">
+        <dc-import name="Figure" fabric="original" skin="#E2B396" hint-size="100%,210px"></dc-import>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px">
+        <span style="font-size: 15px; font-weight: 600">Client · R.</span>
+        <span style="font-size: 13px; color: #A19D95">0 looks</span>
+      </div>
+    </a>
+  </div>
+
+  <nav aria-label="Main" style="margin: 0 24px 34px; padding: 6px; border-radius: 28px; background: #1C1B19; border: 1px solid #2C2B28; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px">
+    <a href="Main.dc.html" aria-current="page" style="height: 48px; border-radius: 22px; background: #F4F2EE; color: #0F0F0E; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 600">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"></rect><rect x="14" y="3" width="7" height="9" rx="2"></rect><rect x="3" y="15" width="7" height="6" rx="2"></rect><rect x="14" y="15" width="7" height="6" rx="2"></rect></svg>
+      Portraits
+    </a>
+    <a href="Looks.dc.html" style="height: 48px; border-radius: 22px; color: #F4F2EE; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 500">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>
+      Looks
+    </a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

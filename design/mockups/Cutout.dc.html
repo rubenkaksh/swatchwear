@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cutout editor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#D7F94A;text-decoration:none}a:hover{color:#E6FF85}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0F0F0E; color: #F4F2EE; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+  <header style="padding: 56px 16px 12px; display: flex; align-items: center; justify-content: space-between">
+    <a href="Main.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 22px; background: #1C1B19; color: #F4F2EE; display: flex; align-items: center; justify-content: center">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700">Fix the cutout</h1>
+    <a href="TryOn.dc.html" style="height: 44px; padding: 0 18px; border-radius: 22px; background: #D7F94A; color: #0F0F0E; display: flex; align-items: center; font-size: 15px; font-weight: 600">Done</a>
+  </header>
+
+  <div style="margin: 4px 24px 0; flex: 1; min-height: 240px; border-radius: 22px; overflow: hidden; position: relative; background: #1C1B19">
+    <dc-import name="Figure" fabric="original" mask="{{ true }}" hint-size="100%,430px"></dc-import>
+    <div style="position: absolute; left: 12px; top: 12px; padding: 6px 12px; border-radius: 14px; background: rgba(15,15,14,0.8); font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px">
+      <span style="width: 8px; height: 8px; border-radius: 4px; background: #D7F94A"></span>
+      Auto-detected · check the edges
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: 228px; top: 300px; width: 34px; height: 34px; border-radius: 17px; border: 2px solid #F4F2EE; box-shadow: 0 0 0 2px rgba(0,0,0,0.4)"></div>
+  </div>
+
+  <div style="padding: 18px 24px 0; display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 13px; font-weight: 600; color: #A19D95">Include</span>
+    <div style="display: flex; gap: 8px">
+      <button style="height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; font: 500 14px Inter, sans-serif; cursor: pointer">Top only</button>
+      <button aria-pressed="true" style="height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid #F4F2EE; background: #F4F2EE; color: #0F0F0E; font: 600 14px Inter, sans-serif; cursor: pointer">Top + sleeves</button>
+      <button style="height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; font: 500 14px Inter, sans-serif; cursor: pointer">Full outfit</button>
+    </div>
+  </div>
+
+  <div style="padding: 18px 24px 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+    <button aria-pressed="true" style="height: 64px; border-radius: 16px; border: 1px solid #D7F94A; background: #262B12; color: #D7F94A; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font: 600 12px Inter, sans-serif; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3l3 3-9 9-3-3 9-9z"></path><path d="M9 12c-3 0-5 2-5 5 0 1.5-1 2.5-2 3 4 1 9 0 10-5"></path></svg>
+      Brush
+    </button>
+    <button style="height: 64px; border-radius: 16px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font: 500 12px Inter, sans-serif; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h10"></path><path d="M4 15l9-9 6 6-7 7H8l-4-4z"></path><path d="M10 9l6 6"></path></svg>
+      Erase
+    </button>
+    <button style="height: 64px; border-radius: 16px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font: 500 12px Inter, sans-serif; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14L4 9l5-5"></path><path d="M4 9h10a6 6 0 010 12h-3"></path></svg>
+      Undo
+    </button>
+    <button style="height: 64px; border-radius: 16px; border: 1px solid #2C2B28; background: #1C1B19; color: #F4F2EE; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font: 500 12px Inter, sans-serif; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 11-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>
+      Re-detect
+    </button>
+  </div>
+
+  <div style="padding: 18px 24px 34px; display: flex; align-items: center; gap: 14px">
+    <label for="brush-size" style="font-size: 14px; color: #A19D95; white-space: nowrap">Brush size</label>
+    <input id="brush-size" type="range" min="4" max="80" value="34" style="flex: 1; accent-color: #D7F94A">
+    <span style="font-size: 14px; font-weight: 600; width: 40px; text-align: right">34 px</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
